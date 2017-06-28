@@ -1,203 +1,68 @@
-/*
- * FullCalendar v1.4.10 Stylesheet
- *
- * Feel free to edit this file to customize the look of FullCalendar.
- * When upgrading to newer versions, please upgrade this file as well,
- * porting over any customizations afterwards.
- *
- * Date: Sat Jan 1 23:46:27 2011 -0800
- *
- */
- 
- 
-/* TODO: make font sizes look the same in all doctypes */
-
-
-.fc,
-.fc .fc-header,
-.fc .fc-content {
-	font-size: 1em;
-	}
-	
-.fc {
-	direction: ltr;
-	text-align: left;
-	}
-	
-.fc table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	}
-	
-.fc td, .fc th {
-	padding: 0;
-	vertical-align: top;
-	}
-
-
-
-/* Header
-------------------------------------------------------------------------*/
-	
 table.fc-header {
-	width: 100%;
-	}
-	
-.fc-header-left {
-	width: 25%;
-	}
-	
-.fc-header-left table {
-	float: left;
-	}
-	
-.fc-header-center {
-	width: 50%;
-	text-align: center;
-	}
-	
-.fc-header-center table {
-	margin: 0 auto;
-	}
-	
-.fc-header-right {
-	width: 25%;
-	}
-	
-.fc-header-right table {
-	float: right;
-	}
-	
-.fc-header-title {
-	margin-top: 0;
-	white-space: nowrap;
-	}
-	
-.fc-header-space {
-	padding-left: 10px;
-	}
-	
-/* right-to-left */
+	border: none !important;
+}
 
-.fc-rtl .fc-header-title {
-	direction: rtl;
-	}
+table.fc-header > tbody > tr > td,
+table.fc-header > tbody > tr > td > table,
+table.fc-header > tbody > tr > td > table > tbody > tr > td,
+table.fc-header > tfoot > tr > td {
+	border: none;	
+}
 
 
 
-/* Buttons
-------------------------------------------------------------------------*/
+div#calendar table {
+	background-color: transparent;
+}
 
-.fc-header .fc-state-default,
-.fc-header .ui-state-default {
-	margin-bottom: 1em;
-	cursor: pointer;
+td.fc-header-right {
+	width: 150px;
 	}
-	
-.fc-header .fc-state-default {
-	border-width: 1px 0;
-	padding: 0 1px;
+td.fc-header-left {
+	width: 150px;
 	}
+h2.fc-header-title {
+	margin-top:0;
+}
 	
-.fc-header .fc-state-default,
-.fc-header .fc-state-default a {
-	border-style: solid;
-	}
-	
-.fc-header .fc-state-default a {
-	display: block;
-	border-width: 0 1px;
-	margin: 0 -1px;
-	width: 100%;
+div.fc-button-prev,
+div.fc-button-next {
+	width: 10px;
+	vertical-align: top;
+}
+
+div.fc-button-prev a span {
+	display: none;
+}
+
+
+div.fc-button-prev a:before {
+	content: "◄";
+}
+
+
+div.fc-button-next a span {
+	display: none;
+}
+
+div.fc-button-next a:before {
+	content: "►";
+}
+
+
+
+
+div.fc-button-today {
+	width: auto;
+}
+
+div.fc-state-default a:hover {
 	text-decoration: none;
-	}
-	
-.fc-header .fc-state-default span {
-	display: block;
-	border-style: solid;
-	border-width: 1px 0 1px 1px;
-	padding: 3px 5px;
-	}
-	
-.fc-header .ui-state-default {
-	padding: 4px 6px;
-	}
-	
-.fc-header .fc-state-default span,
-.fc-header .ui-state-default span {
-	white-space: nowrap;
-	}
-	
-/* for adjacent buttons */
-	
-.fc-header .fc-no-right {
-	padding-right: 0;
-	}
-	
-.fc-header .fc-no-right a {
-	margin-right: 0;
-	border-right: 0;
-	}
-	
-.fc-header .ui-no-right {
-	border-right: 0;
-	}
-	
-/* for fake rounded corners */
-	
-.fc-header .fc-corner-left {
-	margin-left: 1px;
-	padding-left: 0;
-	}
-	
-.fc-header .fc-corner-right {
-	margin-right: 1px;
-	padding-right: 0;
-	}
-	
-/* DEFAULT button COLORS */
-	
-.fc-header .fc-state-default,
-.fc-header .fc-state-default a {
-	border-color: #777; /* outer border */
-	color: #333;
-	}
+	cursor: pointer;
+	height: 20px;
+}
 
-.fc-header .fc-state-default span {
-	border-color: #fff #fff #d1d1d1; /* inner border */
-	background: #e8e8e8;
-	}
-	
-/* PRESSED button COLORS (down and active) */
-	
-.fc-header .fc-state-active a {
-	color: #fff;
-	}
-	
-.fc-header .fc-state-down span,
-.fc-header .fc-state-active span {
-	background: #888;
-	border-color: #808080 #808080 #909090; /* inner border */
-	}
-	
-/* DISABLED button COLORS */
-	
-.fc-header .fc-state-disabled a {
-	color: #999;
-	}
-	
-.fc-header .fc-state-disabled,
-.fc-header .fc-state-disabled a {
-	border-color: #ccc; /* outer border */
-	}
-	
-.fc-header .fc-state-disabled span {
-	border-color: #fff #fff #f0f0f0; /* inner border */
-	background: #f0f0f0;
-	}
-	
-	
-	
+
 /* Content Area & Global Cell Styles
 ------------------------------------------------------------------------*/
 	
@@ -219,8 +84,12 @@ table.fc-header {
 	}
 	
 .fc-content .fc-not-today { /* override jq-ui highlight (TODO: ui-widget-content) */
-	background: none;
+	background-color: transparent;
 	}
+
+.fc-content .fc-sat, .fc-content .fc-sun {
+	background-color: #eee;
+}
 	
 .fc-cell-overlay { /* semi-transparent rectangle while dragging */
 	background: #9cf;
@@ -374,7 +243,7 @@ table.fc-header {
 	
 .fc .fc-grid th {
 	border-width: 0 0 0 1px;
-	text-align: center;
+	text-align: right;
 	}
 	
 .fc .fc-grid td {
