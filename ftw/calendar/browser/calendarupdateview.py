@@ -41,7 +41,7 @@ class CalendarJSONSource(object):
             if portal_calendar:
                 portal_type = portal_calendar.getCalendarTypes()
             else:
-                portal_type = None
+                portal_type = 'Event'
             return catalog(
                 portal_type=portal_type,
                 path={'depth': -1,
